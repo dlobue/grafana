@@ -58,6 +58,28 @@ function (_) {
   });
 
   addFuncDef({
+    name: 'asPercent',
+    params: [ { name: "total", type: 'string', optional: true } ],
+    category: categories.Combine,
+  });
+
+
+  addFuncDef({
+    name: 'divideSeries',
+    shortName: 'divide',
+    params: [ { name: "divisor", type: 'string' } ],
+    category: categories.Combine,
+  });
+
+
+  addFuncDef({
+    name: 'diffSeries',
+    shortName: 'diff',
+    params: [ { name: "other", type: 'string' } ],
+    category: categories.Combine,
+  });
+
+  addFuncDef({
     name: 'sumSeries',
     shortName: 'sum',
     category: categories.Combine,
@@ -142,6 +164,53 @@ function (_) {
   });
 
   addFuncDef({
+    name: "reduceSeries",
+    category: categories.Special,
+    params: [
+      {
+        name: "function",
+        type: "string",
+        options: ['sum', 'avg', 'asPercent']
+      },
+      {
+        name: "node",
+        type: "string",
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+    ],
+    defaultParams: ['asPercent', '']
+  });
+
+  addFuncDef({
     name: "groupByNode",
     category: categories.Special,
     params: [
@@ -164,6 +233,10 @@ function (_) {
     category: categories.Special,
     params: [
       { name: "node", type: "int", options: [0,1,2,3,4,5,6,7,8,9,10,12] },
+      { name: "node", type: "int", options: [0,-1,-2,-3,-4,-5,-6,-7], optional: true },
+      { name: "node", type: "int", options: [0,-1,-2,-3,-4,-5,-6,-7], optional: true },
+      { name: "node", type: "int", options: [0,-1,-2,-3,-4,-5,-6,-7], optional: true },
+      { name: "node", type: "int", options: [0,-1,-2,-3,-4,-5,-6,-7], optional: true },
       { name: "node", type: "int", options: [0,-1,-2,-3,-4,-5,-6,-7], optional: true },
     ],
     defaultParams: [3]
@@ -373,6 +446,13 @@ function (_) {
     category: categories.Filter,
     params: [ { name: "n", type: "int" } ],
     defaultParams: [10]
+  });
+
+  addFuncDef({
+    name: "grep",
+    category: categories.Filter,
+    params: [ { name: "grep", type: 'string' } ],
+    defaultParams: ['grep']
   });
 
   addFuncDef({
