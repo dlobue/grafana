@@ -194,6 +194,53 @@ function (_) {
   });
 
   addFuncDef({
+    name: "reduce",
+    category: categories.Special,
+    params: [
+      {
+        name: "function",
+        type: "string",
+        options: ['sum', 'avg', 'min', 'max', 'asPercent']
+      },
+      {
+        name: "node",
+        type: "string",
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+      {
+        name: "matcher",
+        type: "string",
+        optional: true
+      },
+    ],
+    defaultParams: ['asPercent']
+  });
+
+  addFuncDef({
     name: "groupByNode",
     category: categories.Special,
     params: [
