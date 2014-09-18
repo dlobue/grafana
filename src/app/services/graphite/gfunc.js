@@ -174,6 +174,13 @@ function (_) {
   });
 
   addFuncDef({
+    name: 'map',
+    category: categories.Special,
+    params: [{ name: "mapNode", type: "int", }],
+    defaultParams: [1]
+  });
+
+  addFuncDef({
     name: "consolidateBy",
     category: categories.Special,
     params: [
